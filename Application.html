@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Application form</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Rest of your existing styles */
+    /* Add your additional styles here */
+
+    /* Header styles */
+    header {
+  background-color: #EAF2F8;
+  /* Pale blue color */
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+  /* Set the font-family to Roboto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Center the content vertically and horizontally */
+  text-align: center;
+  /* Center the text horizontally */
+}
+header {
+  background-color: #EAF2F8; /* Pale blue color */
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+nav {
+  flex-grow: 1;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center; /* Center align the navigation items */
+  align-items: center; /* Vertically center the navigation items */
+}
+
+nav ul li {
+  margin-right: px;
+  margin-left: 50px;
+}
+
+nav ul li.logo {
+  margin-right: auto;
+  margin-left: 5px; /* Add a margin to separate the logo from other items */
+}
+
+nav ul li.logo img {
+  height: 60px; /* Adjust the height as needed */
+  width: auto; /* Maintain the aspect ratio */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333333;
+}
+
+nav ul li a:hover {
+  color: #ff5722;
+}
+body {
+      font-family: Calibri, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    .form-container {
+      max-width: 500px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: #555;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    input[type="checkbox"] {
+      margin-top: 6px;
+    }
+
+    textarea {
+      height: 100px;
+    }
+
+  
+
+    .submit-button {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+.submit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+   
+  
+
+    .hamburger-icon {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    li {
+      margin-right: 20px;
+    }
+
+    li:last-child {
+      margin-right: 0;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      /* Add the following styles */
+      left: 0;
+      top: 100%;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      border-bottom: 1px solid #ccc; /* Add a bottom border to separate the items */
+      background-color: #ffffff;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown-content a:last-child {
+      border-bottom: none; /* Remove the bottom border for the last item */
+    }
+
+    
+    a {
+      text-decoration: none;
+      color: #333333;
+      /* Dark gray color */
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #ff5722;
+      /* Orange color on hover */
+    }
+
+    /* Section links styles */
+   /* Section links styles */
+ /* Section links styles */
+ .section-links {
+      background-color: #EAF2F8;
+      /* Pale blue color */
+      padding: 10px;
+      text-align: center;
+    }
+
+    .section-links a {
+      display: inline-block;
+      margin: 5px;
+      padding: 8px 12px;
+      text-decoration: none;
+      color: #333333;
+      /* Dark gray color */
+      font-weight: bold;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .section-links a:hover {
+      background-color: #ff5722;
+      /* Orange color on hover */
+      color: #ffffff;
+      /* White color on hover */
+    }
+
+    /* Background image styles */
+    body {
+      background-image: "None"
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+  
+    #container {
+  position: relative;
+  height: 10px; 
+}
+
+p {
+      padding-left: 60px; /* Adjust this value to increase/decrease the left space */
+      font-family: Calibri, sans-serif;
+      font-size: 18px;
+    }
+    h1 {
+      text-align: center;
+    }
+  
+#container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+#animated-text {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Lilita One', sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.word-wrapper {
+  display: inline-block;
+  opacity: 0;
+  animation: fadeWord 1s ease-in forwards;
+  
+}
+
+.word {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes fadeWord {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+  
+
+
+
+.logo {
+  margin-right: auto;
+}
+
+.logo img {
+  height: 40px; /* Adjust the height as needed */
+  width: auto; /* Maintain the aspect ratio */
+  margin-right: 10px; /* Add some spacing between the logo and navigation links */
+}
+
+.logo a {
+  text-decoration: none;
+  color: #333333;
+}
+
+
+.logo a:hover {
+  color: #ff5722;
+}
+.rectangle {
+  background-color: #EAF2F8;
+  height: 10px; /* Adjust the height value as needed */
+  /* Other styles for the rectangle */
+}
+
+}
+.contact-rectangle {
+  background-color: #EAF2F8;
+  /* Pale blue color */
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  margin-bottom: 20px;
+  height: 400px; /* Adjust the height as needed */
+}
+
+
+
+
+
+    /* Add the rest of your styles */
+    .error-message {
+      color: #d50000;
+      font-size: 14px;
+      margin-top: 5px;
+      display: none;
+      background-color: #ffebee;
+      border: 1px solid #d50000;
+      padding: 5px 10px;
+      border-radius: 4px;
+    }
+    
+    .error-label {
+      color: #d50000;
+      font-size: 12px;
+      margin-bottom: 5px;
+      display: none;
+    }
+
+    html, body {
+      scroll-behavior: smooth;
+}
+  </style>
+  <script>
+    // Add event listener to the "Contact Us" link
+    document.addEventListener('DOMContentLoaded', function() {
+      var contactLink = document.getElementById('contact-link');
+      contactLink.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+
+        // Scroll to the "contact" section with smooth animation
+        document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <main>
+    <header>
+      <nav>
+        <ul>
+          <li class="logo">
+            <a href="home.html">
+              <img src="C:\Users\user\OneDrive\Desktop\M.Website\Pics\Picture12.jpg" alt="Company Logo">
+            </a>
+          </li>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="C:\Users\user\OneDrive\Desktop\M.Website\Pics\Mozac Ventures Training Calender.pdf">Training Catalogue</a></li>
+          <li>
+            <a href="#audit" class="dropdown-toggle">Audits & Assessment Services</a>
+            <div id="audit-dropdown" class="dropdown-content">
+              <a href="C:\Users\user\OneDrive\Desktop\M.Website\Occupational Safety and Health Audits.html">Occupational Safety and Health Audits</a>
+              <a href="C:\Users\user\OneDrive\Desktop\M.Website\Fire Safety Audit.html">Fire Safety Audit</a>
+              <a href="C:\Users\user\OneDrive\Desktop\M.Website\Environmental.html">Environmental Audit</a>
+              <a href="C:\Users\user\OneDrive\Desktop\M.Website\Noise.html">Noise Measurement</a>
+              <a href="C:\Users\user\OneDrive\Desktop\M.Website\IAQ.html">Indoor Air Quality (IAQ)</a>
+              <a href="C:\Users\user\OneDrive\Desktop\M.Website\Ergonomics Audit.html">Ergonomics Audit</a>
+              <a href="C:\Users\user\OneDrive\Desktop\M.Website\Risk Assesment.html">Risk Assessment</a>
+            </div>
+          </li>
+          <li><a href="#contact" id="contact-link">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+
+    <!-- Rest of your HTML code -->
+
+    <section id="about" class="section-links">
+      <!-- Your About section content -->
+    </section>
+
+  
+    <div id="container class="rectangle">
+      <img src="https://media.istockphoto.com/id/1360521419/photo/business-man-working-on-laptop-computer-and-application-form-information-for-the-searching.jpg?b=1&s=170667a&w=0&k=20&c=AEHnPreRcYpFaidfLlrpEPW5St5OYyRO7D7Y77IaZGw=" alt="" style="display: block; margin: 0 auto;" width="900" height="550">
+      <div id="animated-text">
+        <span class="word-wrapper"><span class="word">Apply</span></span>
+        <span class="word-wrapper"><span class="word">Now</span></span>
+        <span class="word-wrapper"><span class="word">!</span></span>
+      
+      </div>
+    </div>
+    
+    
+    
+  
+  
+    
+    
+       
+    <p></p>
+    
+     
+    
+    <form id="applicationForm">
+      <label for="name">Name of Applicant:</label>
+      <input type="text" id="name" name="name" required minlength="9"><br>
+      <div id="nameError" class="error-message">Please enter a name with at least 9 characters.</div>
+      <label class="error-label" for="name" style="display: none;">Invalid name</label>
+  
+      <label for="email">Email address:</label>
+      <input type="email" id="email" name="email" required><br>
+      <div id="emailError" class="error-message">Please enter a valid email address.</div>
+      <label class="error-label" for="email" style="display: none;">Invalid email</label>
+  
+      <label for="phone">Phone number:</label>
+      <input type="tel" id="phone" name="phone" required pattern="[0-9]{10,}"><br>
+      <div id="phoneError" class="error-message">Please enter a valid phone number.</div>
+      <label class="error-label" for="phone" style="display: none;">Invalid phone number</label>
+  
+      <label for="organization">Organization name:</label>
+      <input type="text" id="organization" name="organization" required minlength="9"><br>
+      <div id="organizationError" class="error-message">Please enter an organization name with at least 9 characters.</div>
+      <label class="error-label" for="organization" style="display: none;">Invalid organization name</label>
+  
+  
+      <label>Select plan(s):</label><br>
+      <label>Select plan(s):</label><br>
+      <input type="checkbox" id="plan1" name="plan[]" value="Occupational safety and health">
+      <label for="plan1">Occupational safety and health</label><br>
+      <input type="checkbox" id="plan2" name="plan[]" value="First aid and Fire and safety">
+      <label for="plan2">First aid and Fire and safety</label><br>
+      <input type="checkbox" id="plan3" name="plan[]" value="Safety and Health Committee Training">
+      <label for="plan3">Safety and Health Committee Training</label><br>
+      <input type="checkbox" id="plan4" name="plan[]" value="First Aid Training">
+      <label for="plan4">First Aid Training</label><br>
+      <input type="checkbox" id="plan5" name="plan[]" value="Fire Safety Training">
+      <label for="plan5">Fire Safety Training</label><br>
+      <input type="checkbox" id="plan6" name="plan[]" value="Scaffold Erectors Training">
+      <label for="plan6">Scaffold Erectors Training</label><br>
+      <input type="checkbox" id="plan7" name="plan[]" value="Scaffold Inspectors Training">
+      <label for="plan7">Scaffold Inspectors Training</label><br>
+      <input type="checkbox" id="plan8" name="plan[]" value="Environmental Awareness Training">
+      <label for="plan8">Environmental Awareness Training</label><br>
+      <input type="checkbox" id="plan9" name="plan[]" value="Food Safety and HACCP Training">
+      <label for="plan9">Food Safety and HACCP Training</label><br>
+      <input type="checkbox" id="plan10" name="plan[]" value="Hazmat (Hazardous Material Handling) Training">
+      <label for="plan10">Hazmat (Hazardous Material Handling) Training</label><br>
+      <input type="checkbox" id="plan11" name="plan[]" value="Internal Auditors Training: EMS/QMS/FSMS/OHSMS">
+      <label for="plan11">Internal Auditors Training: EMS/QMS/FSMS/OHSMS</label><br>
+      <input type="checkbox" id="plan12" name="plan[]" value="Forklift Safety Training">
+      <label for="plan12">Forklift Safety Training</label><br>
+      <input type="checkbox" id="plan13" name="plan[]" value="MEWP (Scissor Lift and Cherry Picker) Operators Training">
+      <label for="plan13">MEWP (Scissor Lift and Cherry Picker) Operators Training</label><br>
+      <input type="checkbox" id="plan14" name="plan[]" value="Confined Space Safety">
+      <label for="plan14">Confined Space Safety</label><br>
+      <input type="checkbox" id="plan15" name="plan[]" value="Lifting & Rigging">
+      <label for="plan15">Lifting & Rigging</label><br>
+      <input type="checkbox" id="plan16" name="plan[]" value="Electrical Safety Training">
+      <label for="plan16">Electrical Safety Training</label><br>
+      <input type="checkbox" id="plan17" name="plan[]" value="NEBOSH Qualifications">
+      <label for="plan17">NEBOSH Qualifications</label><br>
+      <input type="checkbox" id="plan18" name="plan[]" value="HIRA (Hazard Identification & Risk Assessment)">
+      <label for="plan18">HIRA (Hazard Identification & Risk Assessment)</label><br>
+      <input type="checkbox" id="plan19" name="plan[]" value="Plant & Machinery Safety">
+      <label for="plan19">Plant & Machinery Safety</label><br>
+      <input type="checkbox" id="plan20" name="plan[]" value="Intergerated Pest Management (IPM)">
+      <label for="plan20">Intergerated Pest Management (IPM)</label><br>
+      <input type="checkbox" id="plan21" name="plan[]" value="Gender Development & Mainstreaming">
+      <label for="plan21">Gender Development & Mainstreaming</label><br>
+      <input type="checkbox" id="plan21" name="plan[]" value="System Implimentation on QHSE, Food safety">
+      <label for="plan21">Gender Development & Mainstreaming</label><br>
+      <input type="checkbox" id="plan21" name="plan[]" value="System Implimentation on Asset Management,Information Safety">
+      <label for="plan21">Gender Development & Mainstreaming</label><br>
+      <p>Among many others........</p>
+      <br><br>
+      <div id="planError" class="error-message" style="display: none;">Please select at least one plan.</div>
+      <label class="error-label" for="plan" style="display: none;">Invalid plan selection</label>
+      
+
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+      <div id="messageError" class="error-message" style="display: none;">Please enter a message.</div>
+      <label class="error-label" for="message" style="display: none;">Invalid message</label>
+  
+  
+      <input type="checkbox" id="authorization" required>
+      <label for="authorization">Do you authorize the contents of this Application form to be sent to Mozac Ventures via email?</label><br><br>
+      <div id="authorizationError" class="error-message" style="display: none;">Please authorize the contents of the application form to be sent.</div>
+      <label class="error-label" for="authorization" style="display: none;">Invalid authorization</label>
+  
+  
+      <input type="submit" value="Submit" id="submitButton" disabled>
+  </form>
+  
+
+
+
+
+
+
+    <script>
+      document.getElementById("applicationForm").addEventListener("input", function() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        var organization = document.getElementById("organization").value;
+        var plan1 = document.getElementById("plan1").checked;
+        var plan2 = document.getElementById("plan2").checked;
+        var message = document.getElementById("message").value;
+        var authorization = document.getElementById("authorization").checked;
+        var submitButton = document.getElementById("submitButton");
+    
+        var isValidName = name.length >= 9;
+        var isValidEmail = validateEmail(email);
+        var isValidPhone = phone.match(/[0-9]{10,}/);
+        var isValidOrganization = organization.length >= 9;
+        var isValidPlan = plan1 || plan2;
+        var isValidMessage = message !== "";
+        var isValidAuthorization = authorization;
+    
+        if (
+          isValidName &&
+          isValidEmail &&
+          isValidPhone &&
+          isValidOrganization &&
+          isValidPlan &&
+          isValidMessage &&
+          isValidAuthorization
+        ) {
+          submitButton.disabled = false;
+        } else {
+          submitButton.disabled = true;
+        }
+    
+        // Display error messages
+        document.getElementById("nameError").style.display = isValidName ? "none" : "block";
+        document.getElementById("emailError").style.display = isValidEmail ? "none" : "block";
+        document.getElementById("phoneError").style.display = isValidPhone ? "none" : "block";
+        document.getElementById("organizationError").style.display = isValidOrganization ? "none" : "block";
+        document.getElementById("planError").style.display = isValidPlan ? "none" : "block";
+        document.getElementById("messageError").style.display = isValidMessage ? "none" : "block";
+        document.getElementById("authorizationError").style.display = isValidAuthorization ? "none" : "block";
+      });
+    
+      // Email validation function
+      function validateEmail(email) {
+        var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(email);
+      }
+
+
+  
+      document.getElementById("applicationForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var organization = document.getElementById("organization").value;
+    var plan1 = document.getElementById("plan1").checked;
+    var plan2 = document.getElementById("plan2").checked;
+    var message = document.getElementById("message").value;
+
+    var subject = organization;
+    var body =
+      "Message: " + message + "\n\n" +
+      "Name of Applicant: " + name + "\n" +
+      "Email Address: " + email + "\n" +
+      "Organization Name: " + organization + "\n" +
+      "Plans: " + (plan1 ? "Occupational safety and health " : "") + (plan2 ? "First aid and Fire and safety" : "");
+
+    var mailtoLink = "mailto:mozacventures97@gmail.com" +
+      "?subject=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(body);
+
+    // Open a new tab with the email draft
+    var newTab = window.open(mailtoLink, "_blank");
+    if (newTab) {
+      newTab.focus();
+    } else {
+      alert("Please allow pop-ups to open the email draft.");
+    }
+  });
+
+
+  
+    </script>
+   
+
+    
+    <section id="services">
+      <!-- Your Services section content -->
+    </section>
+
+    <section id="portfolio">
+      <!-- Your Portfolio section content -->
+    </section>
+
+    </main>
+
+   
+
+    <section id="contact" class="section-links">
+      <div class="contact-rectangle">
+        <h3><i><u>Get in touch with us</u></i></h3>
+        <p>Address: <a href="https://goo.gl/maps/SHZnTx8x8BX4KQjG6" target="_blank">Located in: Bidii Supermarket, 4th Floor Bidii Plaza, Ruiru</a></p>
+        <p>
+          Telephone: <a href="tel:+254725573969" target="_blank">
+            <img src="https://static.vecteezy.com/system/resources/previews/000/420/369/original/vector-telephone-road-sign-icon.jpg" alt="Telephone icon" width="20px" height="20px">
+            +254725573969</a>
+        </p>
+        <p>
+          Email us : <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mozacventures97@gmail.com" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png" alt="Email icon" width="20px" height="20px">
+            mozacventures97@gmail.com</a>
+        </p>
+        <p>
+          WhatsApp: <a href="https://wa.me/254725573969" target="_blank">
+            <img src="https://w7.pngwing.com/pngs/872/916/png-transparent-whatsapp-logo-whatsapp-computer-icons-telephone-call-whatsapp-grass-internet-mobile-phones-thumbnail.png" alt="WhatsApp icon" width="20px" height="20px">
+            +254725573969</a>
+        </p>
+        Facebook: <a href="https://www.facebook.com/mozacventures?mibextid=ZbWKwL" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/2048px-2021_Facebook_icon.svg.png" alt="Telephone icon" width="20px" height="20px">
+          Click here</a>
+      </p>
+      <p>
+        <p>Website: <a href="[Enter website link here]" target="_blank">[Enter website link here]</a></p>
+      </div>
+    </section>
+    
+     <script src="script.js"></script>
+     <script src="Anime.js"></script>
+     <script src="App.js"></script>
+  </body>
+  
+  </html>
+    

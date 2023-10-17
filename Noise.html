@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Noise Management</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Rest of your existing styles */
+    /* Add your additional styles here */
+
+    /* Header styles */
+    header {
+  background-color: #EAF2F8;
+  /* Pale blue color */
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+  /* Set the font-family to Roboto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Center the content vertically and horizontally */
+  text-align: center;
+  /* Center the text horizontally */
+}
+header {
+  position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+          
+            padding: 10px;
+            margin: 0 10px; /* Add left and right margin */
+        }
+        
+nav {
+  flex-grow: 1;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center; /* Center align the navigation items */
+  align-items: center; /* Vertically center the navigation items */
+}
+
+nav ul li {
+  margin-right: 100px;
+  margin-left: -10px;
+}
+
+nav ul li.logo {
+  margin-right: auto;
+  margin-left: 5px; /* Add a margin to separate the logo from other items */
+}
+
+nav ul li.logo img {
+  height: 60px; /* Adjust the height as needed */
+  width: auto; /* Maintain the aspect ratio */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333333;
+}
+
+nav ul li a:hover {
+  color: #ff5722;
+}
+
+
+    .hamburger-icon {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    font-size: 17px;
+    text-align: left;
+    margin-left: 50px; /* Adjust this value as needed */
+  }
+  ul li {
+    font-family: Calibri, Arial, sans-serif;
+  }
+
+
+    li {
+      margin-right: 20px;
+    }
+
+    li:last-child {
+      margin-right: 0;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      /* Add the following styles */
+      left: 0;
+      top: 100%;
+    }
+    .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .btn:hover {
+    background-color: #ff5722;
+    color: #ffffff;
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+  }
+
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      border-bottom: 1px solid #ccc; /* Add a bottom border to separate the items */
+      background-color: #ffffff;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown-content a:last-child {
+      border-bottom: none; /* Remove the bottom border for the last item */
+    }
+
+    
+    a {
+      text-decoration: none;
+      color: #333333;
+      /* Dark gray color */
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #ff5722;
+      /* Orange color on hover */
+    }
+
+    /* Section links styles */
+   /* Section links styles */
+ /* Section links styles */
+ .section-links {
+      background-color: #EAF2F8;
+      /* Pale blue color */
+      padding: 10px;
+      text-align: center;
+    }
+
+    .section-links a {
+      display: inline-block;
+      margin: 5px;
+      padding: 8px 12px;
+      text-decoration: none;
+      color: #333333;
+      /* Dark gray color */
+      font-weight: bold;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .section-links a:hover {
+      background-color: #ff5722;
+      /* Orange color on hover */
+      color: #ffffff;
+      /* White color on hover */
+    }
+
+    /* Background image styles */
+    body {
+      background-image: "None"
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 0px;
+    }   
+  
+    #container {
+  position: relative;
+  height: 10px; 
+}
+
+p {
+      padding-left: 60px; /* Adjust this value to increase/decrease the left space */
+      font-family: Calibri, sans-serif;
+      font-size: 18px;
+    }
+    h1 {
+      text-align: center;
+    }
+  
+#container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+#animated-text {
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Lilita One', sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.word-wrapper {
+  display: inline-block;
+  opacity: 0;
+  animation: fadeWord 1s ease-in forwards;
+  
+}
+
+.word {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes fadeWord {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.logo {
+  margin-right: auto;
+}
+
+.logo img {
+  height: 40px; /* Adjust the height as needed */
+  width: auto; /* Maintain the aspect ratio */
+  margin-right: 10px; /* Add some spacing between the logo and navigation links */
+}
+
+.logo a {
+  text-decoration: none;
+  color: #333333;
+}
+
+.logo a:hover {
+  color: #ff5722;
+}
+.rectangle {
+  background-color: #EAF2F8;
+  height: 10px; /* Adjust the height value as needed */
+  /* Other styles for the rectangle */
+}
+
+}
+.contact-rectangle {
+  background-color: #EAF2F8;
+  /* Pale blue color */
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  margin-bottom: 20px;
+  height: 400px; /* Adjust the height as needed */
+}
+
+
+html, body {
+      scroll-behavior: smooth;
+}
+
+
+    /* Add the rest of your styles */
+
+  </style>
+  <script>
+    // Add event listener to the "Contact Us" link
+    document.addEventListener('DOMContentLoaded', function() {
+      var contactLink = document.getElementById('contact-link');
+      contactLink.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+
+        // Scroll to the "contact" section with smooth animation
+        document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>s
+</head>
+
+<body>
+  <main>
+    <header>
+      <nav>
+        <ul>
+          <li class="logo">
+            <a href="home.html">
+              <img src="C:\Users\user\OneDrive\Desktop\M.Website\Pics\Picture12.jpg" alt="Company Logo">
+            </a>
+          </li>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="home.html#who-we-are">About Us</a></li>
+          <li><a href="C:\Users\user\OneDrive\Desktop\M.Website\Pics\Mozac Ventures Training Calender.pdf">Training Catalogue</a></li>
+          <li><a href="C:\Users\user\OneDrive\Desktop\M.Website\Pics\Mozac Ventures and Solutions Company Profile.pdf">Company Profile</a></li>
+          <li>
+            <a href="#audit" class="dropdown-toggle">Audits & Assessment Services</a>
+            <div id="audit-dropdown" class="dropdown-content">
+              <a href="C:\Users\user\OneDrive\Desktop\M.Website\Occupational Safety and Health Audits.html">Occupational Safety and Health Audits</a>
+              <a href="C:\Users\user\OneDrive\Desktop\M.Website\Fire Safety Audit.html">Fire Safety Audit</a>
+              <a href="C:\Users\user\OneDrive\Desktop\M.Website\Environmental.html">Environmental Audit</a>
+              <a href="C:\Users\user\OneDrive\Desktop\M.Website\Noise.html">Noise Measurement</a>
+              <a href="C:\Users\user\OneDrive\Desktop\M.Website\IAQ.html">Indoor Air Quality (IAQ)</a>
+              <a href="C:\Users\user\OneDrive\Desktop\M.Website\Ergonomics Audit.html">Ergonomics Audit</a>
+              <a href="C:\Users\user\OneDrive\Desktop\M.Website\Risk Assesment.html">Risk Assessment</a>
+            </div>
+          </li>
+          <li><a href="#contact" id="contact-link">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+
+    <!-- Rest of your HTML code -->
+
+    <section id="about" class="section-links">
+      <!-- Your About section content -->
+    </section>
+
+  
+    <div id="container class="rectangle">
+      <img src="https://plutusias.com/wp-content/uploads/2022/09/asaj.png" alt="" style="display: block; margin: 0 auto;" width="900" height="550">
+      <div id="animated-text">
+      
+        <span class="word-wrapper"><span class="word">Noise</span></span>
+        <span class="word-wrapper"><span class="word">Management</span></span>
+      </div>
+    </div>
+    
+    
+    
+  
+   
+    
+    
+       
+    <p></p>
+    
+     
+    <p> Loud noise at work can damage workers hearing. This usually happens gradually and it may 
+        only be when the damage caused by noise combines with hearing loss due to ageing that people realize
+         how impaired their hearing has become.</p>
+    
+
+    <div class="center">
+      <h1>What is a Noise Measurement Audit?</h1>
+    </div>
+    <p>Workplace inspections are completed to identify noise, vibration and other hazards; workers and 
+        students are not exposed to noise level that exceeds the exposure standard (i.e. 85 dB(A) LAeq 8h,
+         and 140 dB(C) peak exposure level);</p>
+    <div class="indent">
+      <p></p>
+    </div>
+    
+        <p></p>
+        
+        <h1>What are the objectives of noise management?</h1>
+        <p>The objective of environmental noise control is to improve the acoustic environment in a 
+            community by reducing noise levels.</p> 
+           
+            <img src="https://cdn.educba.com/academy/wp-content/uploads/2023/01/Noise-Pollution.jpg" alt=""style="display: block; margin: 0 auto;" width="900" height="550">
+            <div class="btn-container">
+              <a href="C:\Users\user\OneDrive\Desktop\M.Website\Application.html" class="btn">Apply Now</a>
+            </div>
+    
+    <section id="services">
+      <!-- Your Services section content -->
+    </section>
+
+    <section id="portfolio">
+      <!-- Your Portfolio section content -->
+    </section>
+
+    </main>
+
+   
+
+    <section id="contact" class="section-links">
+      <div class="contact-rectangle">
+        <h3><i><u>Get in touch with us</u></i></h3>
+        <p>Address: <a href="https://goo.gl/maps/SHZnTx8x8BX4KQjG6" target="_blank">Located in: Bidii Supermarket, 4th Floor Bidii Plaza, Ruiru</a></p>
+        <p>
+          Telephone: <a href="tel:+254725573969" target="_blank">
+            <img src="https://static.vecteezy.com/system/resources/previews/000/420/369/original/vector-telephone-road-sign-icon.jpg" alt="Telephone icon" width="20px" height="20px">
+            +254725573969</a>
+        </p>
+        <p>
+          Email us : <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mozacventures97@gmail.com" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png" alt="Email icon" width="20px" height="20px">
+            mozacventures97@gmail.com</a>
+        </p>
+        <p>
+          WhatsApp: <a href="https://wa.me/254725573969" target="_blank">
+            <img src="https://w7.pngwing.com/pngs/872/916/png-transparent-whatsapp-logo-whatsapp-computer-icons-telephone-call-whatsapp-grass-internet-mobile-phones-thumbnail.png" alt="WhatsApp icon" width="20px" height="20px">
+            +254725573969</a>
+        </p>
+        Facebook: <a href="https://www.facebook.com/mozacventures?mibextid=ZbWKwL" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/2048px-2021_Facebook_icon.svg.png" alt="Telephone icon" width="20px" height="20px">
+          Click here</a>
+      </p>
+      <p>
+        <p>Website: <a href="[Enter website link here]" target="_blank">[Enter website link here]</a></p>
+      </div>
+    </section>
+    
+     <script src="script.js"></script>
+     <script src="Anime.js"></script>
+  </body>
+  
+  </html>
+    

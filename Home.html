@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mozac Ventures</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Rest of your existing styles */
+
+    /* Header styles */
+    header {
+  background-color:  #ffffff;
+  /* Pale blue color */
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+  /* Set the font-family to Roboto */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Center the content vertically and horizontally */
+  text-align: center;
+  /* Center the text horizontally */
+}
+
+header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      color: #fff;
+      padding: 10px;
+      z-index: 999;
+    }
+  
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hamburger-icon {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    li {
+      margin-right: 20px;
+    }
+
+    li:last-child {
+      margin-right: 0;
+    }
+
+    .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #EAF2F8;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  /* Add the following styles */
+  left: 0;
+  top: 100%;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #ffffff; /* Add a bottom border to separate the items */
+}
+
+.dropdown-content a:hover {
+  background-color: #ffffff;
+}
+
+
+
+dropdown-content a:last-child {
+  border-bottom: none; /* Remove the bottom border for the last item */
+}
+
+
+    a {
+      text-decoration: none;
+      color: #333333;
+      /* Dark gray color */
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #ff5722;
+      /* Orange color on hover */
+    }
+
+    /* Section links styles */
+    .section-links {
+      background-color: #EAF2F8;
+      /* Pale blue color */
+      padding: 10px;
+      text-align: center;
+    }
+
+    .section-links a {
+      display: inline-block;
+      margin: 5px;
+      padding: 8px 12px;
+      text-decoration: none;
+      color: #333333;
+      /* Dark gray color */
+      font-weight: bold;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .section-links a:hover {
+      background-color: #ff5722;
+      /* Orange color on hover */
+      color: #ffffff;
+      /* White color on hover */
+    }
+
+    p {
+      padding-left: 60px; /* Adjust this value to increase/decrease the left space */
+      font-family:  Candara;
+      font-size: 17px;
+    }
+    /* Background image styles */
+    body {
+      
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #a5d3e0; /* Use your desired color code */
+    }
+
+    .rectangle {
+      background-color: #EAF2F8; /* Pale blue color */
+      padding: 10px;
+      border-radius: 4px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .rectangle h2 {
+      margin: 5px 0;
+      color: #333333; /* Dark gray color */
+      font-weight: bold;
+    }
+
+    /* Rest of your existing styles */
+
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .rectangle {
+      background-color: #EAF2F8; /* Pale blue color */
+      padding: 10px;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    h2 {
+    color: rebeccapurple;
+   font-family: 'Muller', sans-serif;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .btn:hover {
+    background-color: #ff5722;
+    color: #ffffff;
+  }
+
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+  }
+
+  
+  /* Contact section animation */
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  
+
+
+
+
+
+
+  .section {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .section img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+    }
+
+    .section h3 {
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    .section p {
+        text-align: justify;
+        margin: 0 auto;
+        width: 60%;
+    }
+
+    .slideshow-container {
+        position: relative;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .slideshow-container img {
+        width: 100%;
+        height: auto;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .slideshow-container img.active {
+        opacity: 1;
+    }
+
+    .testimonial {
+      margin-bottom: 20px;
+
+    }
+    .testimonials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 50px 0; /* Adjust the padding as needed */
+  color: black;
+}
+
+
+    .testimonial img {
+      width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    }
+
+    .testimonial h3 {
+        font-style: italic;
+        font-weight: bold;
+    }
+
+    
+
+.managers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+    .manager-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 500px; /* Adjust the max-width as needed */
+}
+
+.manager-info img {
+  max-width: 100%;
+  border-radius: 50%
+}
+
+.manager-info h3 {
+  font-style: italic;
+}
+.testimonial h4 {
+    margin-bottom: 10px;
+  }
+
+  .testimonial p:last-child {
+    margin-bottom: 0;
+  }
+
+.manager-info p {
+  margin-top: 10px;
+}
+
+
+
+    .managers .slide {
+  display: none;
+  animation: fade 1s;
+}
+
+.managers .slide.active {
+  display: flex;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.testimonials .testimonial {
+  display: none;
+  animation: slideLeft 1s;
+}
+
+.testimonials .testimonial.active {
+  display: flex;
+}
+.testimonial p {
+    margin-bottom: 10px;
+  }
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+html, body {
+      scroll-behavior: smooth;
+}
+
+.testimonial-section {
+  background-color: #cde6ec;
+  background-size: cover;
+  background-position: center;
+}
+.highlight {
+      font-size: 50px; /* Adjust the font size as desired */
+      font-family: 'Roboto', sans-serif; /* Set the font family to Roboto */
+        font-weight: 700; /* Set the font weight to bold */
+        color: chocolate;
+      color:black; /* Set a different color if desired */
+      text-align: center;
+      margin-bottom: -20px;
+    }
+
+
+.image-container img {
+    margin-right: 10px; /* Add right margin for spacing */
+  }
+  h5 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        text-align: center; /* Center-align the text */
+      }
+      .special-section {
+      background-color: black;
+      color: white;
+      text-align: center;
+    }
+    .container {
+      text-align: center;
+    }
+    .container img {
+      display: block;
+      margin: 0 auto;
+    }
+  
+</style>
+<script>
+    // Add event listener to the "Contact Us" link
+    document.addEventListener('DOMContentLoaded', function() {
+      var contactLink = document.getElementById('contact-link');
+      contactLink.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent the default link behavior
+
+        // Scroll to the "contact" section with smooth animation
+        document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <main>
+    <section id="hero">
+      
+      
+    </section>
+    <header>
+      <nav>
+        <div class="logo">
+          <a href="home.html">
+            <img src="C:\Users\user\OneDrive\Desktop\M.Website\Pics\Picture12.jpg" alt="Company Logo">
+          </a>
+        </div>
+     
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="#who-we-are" onclick="scrollToSection('about')">About Us</a></li>
+          <li><a href="C:\Users\user\OneDrive\Desktop\M.Website\Pics\Mozac Ventures Training Calender.pdf">Training Catalogue</a></li>
+          <li><a href="C:\Users\user\OneDrive\Desktop\M.Website\Pics\Mozac Ventures and Solutions Company Profile.pdf">Company Profile</a></li>
+        
+          <li>
+            <a href="#audit" class="dropdown-toggle">Audits & Assessment Services</a>
+            <div id="audit-dropdown" class="dropdown-content">
+              <a href="C:\Users\user\OneDrive\Desktop\M.Website\Occupational Safety and Health Audits.html">Occupational Safety and Health Audits</a>
+              <a href="C:\Users\user\OneDrive\Desktop\M.Website\Fire Safety Audit.html">Fire Safety Audit</a>
+              <a href="C:\Users\user\OneDrive\Desktop\M.Website\Environmental.html">Environmental Audit</a>
+              <a href="C:\Users\user\OneDrive\Desktop\M.Website\Noise.html">Noise Measurement</a>
+              <a href="C:\Users\user\OneDrive\Desktop\M.Website\IAQ.html">Indoor Air Quality (IAQ)</a>
+              <a href="C:\Users\user\OneDrive\Desktop\M.Website\Ergonomics Audit.html">Ergonomics Audit</a>
+              <a href="C:\Users\user\OneDrive\Desktop\M.Website\Risk Assesment.html">Risk Assessment</a>
+             
+            </div>
+          </li>
+          <li><a href="#contact" id="contact-link">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <p class="highlight">Welcome to Mozac Ventures & Solutions</p>
+   
+    
+
+    <div class="special-section">
+      <h5>A BRAND YOU CAN TRUST IN SAFETY AND HEALTH</h5>
+   
+    </div>
+
+    
+    <p class="highlight">Welcome to Mozac Ventures & Solutions</p>
+   
+    
+
+    <div class="special-section">
+      <h5>A BRAND YOU CAN TRUST IN SAFETY AND HEALTH</h5>
+   
+    </div>
+    <section id="who-we-are">
+    <div class="rectangle">
+      <h2 id="about">Who are we?</h2>
+    </div>
+    </section>
+<p>
+      We are a world’s leading inspection, Testing ,Training & Consultancy Company. We are recognized as the global benchmark for quality and integrity. With more than 60 employees, we operate a
+      network of more than 25 offices around the world.
+      </p>
+      
+      <div class="container">
+        <img src="C:\Users\user\OneDrive\Desktop\M.Website\Pics\Intro.jpg" width="600" height="400">
+      </div>
+
+      <p>
+        MOZAC VENTURES offers services and solutions that are long-lasting, trustworthy, and of high quality in areas 
+        related to Quality, Safety, Health, and Environment. <br> We actively follow the S.H.E 
+        (Safety, Health, and Environment) 
+        process and highlight the importance of taking proactive approaches and adopting the right behavior to foster 
+        a culture that values S.H.E within organizations. Being proactive is crucial for building a positive corporate
+         culture and helps organizations avoid losses in terms of human resources, assets, and business.</p>
+        <img src="C:\Users\user\OneDrive\Desktop\M.Website\Pics\All.jpg" alt="" width="800" height="400"style="display: block; margin: 0 auto;">
+    <br>
+        <div class="rectangle">
+      <h2>Some of the projects our teams have worked with include:</h2>
+    </div>
+ 
+  <p>Throughout our journey, Mozac Ventures and Solutions has been privileged to collaborate on a wide range of projects that have made a meaningful impact. From small-scale initiatives to large-scale ventures, we have continuously strived to deliver exceptional solutions and exceed client expectations.</p>
+  <p>Some of the projects our teams have worked with include:</p>
+ 
+
+  <div class="image-container">
+    <img src="C:/Users/user/OneDrive/Desktop/M.Website/Pics/Brentag.jpeg" alt="">
+    <img src="C:/Users/user/OneDrive/Desktop/M.Website/Pics/Biometrics.png" alt="">
+    <img src="C:/Users/user/OneDrive/Desktop/M.Website/Pics/Sai.jpeg" alt="">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Dalbit_logo.png" alt="">
+    <img src="C:/Users/user/OneDrive/Desktop/M.Website/Pics/Sierra Rutile.jpeg" alt="">
+    <img src="https://www.finlays.net/wp-content/uploads/2020/02/finlays-logo.png" alt="" width="370" height="300">
+  </div>
+  
+  <p></p>
+  <div class="rectangle">
+    <h2>Our Managers</h2>
+  </div>
+
+
+  <div class="managers">
+   
+    <div class="slide active">
+      <div class="manager-info">
+        <img src="C:\Users\user\OneDrive\Desktop\M.Website\Pics\Director 1.jpg" width="220" height="270">
+        <h3>Alex Musau- General Manager</h3>
+        <p>"Meet Alex Musau, our accomplished General Manager who brings a wealth of strategic expertise and exceptional leadership to
+           the company ensuring operational excellence."</p>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="manager-info">
+        <img src="C:\Users\user\OneDrive\Desktop\M.Website\Pics\Director 2.jpg" width="300" height="300">
+        <h3>Isaac Gitau- Finance Manager</h3>
+        <p>Meet "Isaac Gitau, our proficient Finance Director, who provides invaluable insights for informed decision-making.
+        </p>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="manager-info">
+        <img src="C:\Users\user\OneDrive\Desktop\M.Website\Pics\Director 3.jpg" width="200" height="250" alt="Manager 3">
+        <h3>Josephine Kimata- Technical Manager</h3>
+        <p>Meet Josephine, our dedicated technical Manager who ensures successful project execution,an indispensable part of our team</p>
+      </div>
+    </div>
+    <div class="slide">
+      <div class="manager-info">
+        <img src="C:\Users\user\OneDrive\Desktop\M.Website\Pics\Chaplain.jpg" width="300" height="320">
+        <h3>Rev.James Muhia- Chaplain</h3>
+        <p>Meet Rev.James, our caring Chaplain, offering comfort, cohesion and spiritual counselling. An essential pillar for our focus.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+
+
+ 
+
+
+
+
+
+    <div class="rectangle">
+      <h2>Our Motto and Vision </h2>
+    </div>
+    <p><b>Motto:</b> <br>"Empowering Growth, Inspiring Excellence" </p> <img src="https://school.cambridge.edu.in/wp-content/uploads/2021/10/pngaaa.com-2156764.png" alt=""style="display: block; margin: 0 auto;">
+<p style="text-align: right;"> <b>Vision:</b> <br>
+  "At Mozac Ventures, our vision is to be a catalyst for positive change and 
+  transformation in the industry. We strive to empower <br>individuals and organizations
+   to reach their full potential by providing innovative solutions and exceptional services. 
+   With a commitment <br> to excellence, integrity, and continuous improvement, we aim to be a 
+   trusted partner and a leading force in driving success for our clients. <br> Together, we envision 
+   a future where possibilities are limitless, and achievements are extraordinary.</p>
+      </p>
+   
+
+    
+    <div class="rectangle">
+      <h2>Testimonials from our Clientele</h2>
+    </div>
+
+    <section id="testimonials" class="testimonial-section">
+      <!-- Testimonial content goes here -->
+       <div class="testimonials">
+  
+      <div class="testimonial active">
+        <img src="C:\Users\user\OneDrive\Desktop\M.Website\Pics\Dinesh Sai.jpg ">
+        <h4>Dinesh- Sai Pharmaceuticals</h4>
+        <p>"I am incredibly grateful to Mozac Ventures for their exceptional financial 
+          expertise and unwavering support. As a business owner, having Isaac and his team as our 
+          financial advisors has been invaluable. Their meticulous attention 
+           to detail, proactive approach, and deep understanding of our industry have allowed
+            us to make informed decisions, optimize our financial performance, and secure a 
+            bright future for our company."</p>
+      </div>
+  
+      <div class="testimonial">
+        <img src="C:\Users\user\OneDrive\Desktop\M.Website\Pics\Jane Bio.jpg" alt="Testimonial 2">
+        <h4>Jane -Biometrics Limited</h4>
+        <p>"Working with Mozac Ventures has been a career-defining move for me. Alex, our Project Manager,
+           has been instrumental in guiding our team towards success. His exceptional leadership skills,
+            attention to detail, and ability to inspire and motivate the team have resulted in the seamless
+             execution of complex projects. Mozac Ventures is a company that truly values its employees and 
+             fosters a supportive and collaborative work environment."</p>
+      </div>
+      <div class="testimonial">
+        <img src="C:\Users\user\OneDrive\Desktop\M.Website\Pics\Peter Bre.jpg" alt="Testimonial 3">
+        <h4>Peter -Brenntag</h4> <br>
+        <p>"Working with Mozac Ventures has been an absolute game-changer for my business. 
+          Their innovative solutions and strategic guidance have helped us achieve remarkable
+           growth and stay ahead in the market. The team at Mozac Ventures is professional, 
+           dedicated, and truly invested in our success. I couldn't be happier with the results 
+           they've delivered."</p>
+      </div>
+      <div class="testimonial">
+        <img src="C:\Users\user\OneDrive\Desktop\M.Website\Pics\Dalbit.jpg" alt="Testimonial 3">
+        <h4>Joash -Dalbit Int(JSG Holdings)</h4> <br>
+        <p>"As Dalbit,working with Mozac Ventures has been an absolute pleasure.
+           Thier exceptional expertise in project management and strategic planning has 
+           been instrumental in ensuring the success of our initiatives. Mozac Ventures' keen
+            attention to detail, effective communication, and ability to navigate complex 
+            challenges have consistently exceeded our expectations. I highly recommend Mozac 
+            Ventures for their unwavering commitment to delivering outstanding results."</p>
+      </div>
+    </div>
+  </section>
+    
+   
+    
+  
+    <div class="btn-container">
+      <a href="C:\Users\user\OneDrive\Desktop\M.Website\Application.html" class="btn">Apply Now</a>
+    </div>
+
+  
+
+    </main>
+
+
+    <section id="contact" class="section-links">
+      <div class="rectangle">
+        <div id="scroll-to-contact">
+          <h3><i><u>Get in touch with us</u></i></h3>
+        <p>Address: <a href="https://goo.gl/maps/SHZnTx8x8BX4KQjG6" target="_blank">Located in: Bidii Supermarket, 4th Floor Bidii Plaza, Ruiru</a></p>
+        <p>
+          Telephone: <a href="tel:+254725573969" target="_blank">
+            <img src="https://static.vecteezy.com/system/resources/previews/000/420/369/original/vector-telephone-road-sign-icon.jpg" alt="Telephone icon" width="20px" height="20px">
+            +254725573969</a>
+        </p>
+        <p>
+          Email us : <a href="https://mail.google.com/mail/?view=cm&fs=1&to=mozacventures97@gmail.com" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/2560px-Gmail_icon_%282020%29.svg.png" alt="Email icon" width="20px" height="20px">
+            mozacventures97@gmail.com</a>
+        </p>
+        <p>
+          WhatsApp: <a href="https://wa.me/254725573969" target="_blank">
+            <img src="https://w7.pngwing.com/pngs/872/916/png-transparent-whatsapp-logo-whatsapp-computer-icons-telephone-call-whatsapp-grass-internet-mobile-phones-thumbnail.png" alt="WhatsApp icon" width="20px" height="20px">
+            +254725573969</a>
+        </p>
+        Facebook: <a href="https://www.facebook.com/mozacventures?mibextid=ZbWKwL" target="_blank">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/2048px-2021_Facebook_icon.svg.png" alt="Telephone icon" width="20px" height="20px">
+          Click here</a>
+      </p>
+      <p>
+        <p>Website: <a href="[Enter website link here]" target="_blank">[Enter website link here]</a></p>
+      </div>
+      </div>
+    </section>
+    
+     <script src="script.js"></script>
+     <script>
+
+
+
+      // Slideshow for Manager section
+const managersSlides = document.querySelectorAll('.managers .slide');
+let currentManagersSlide = 0;
+
+function showNextManagersSlide() {
+  const previousSlide = managersSlides[currentManagersSlide];
+  previousSlide.classList.remove('active');
+
+  currentManagersSlide = (currentManagersSlide + 1) % managersSlides.length;
+
+  const nextSlide = managersSlides[currentManagersSlide];
+  nextSlide.classList.add('active');
+}
+
+// Display the first manager slide initially
+managersSlides[currentManagersSlide].classList.add('active');
+
+setInterval(showNextManagersSlide, 7000); // Change manager slide every 7 seconds
+
+
+
+// Slideshow for Testimonials tab
+const testimonials = document.querySelectorAll('.testimonials .testimonial');
+let currentTestimonial = 0;
+
+function showNextTestimonial() {
+  const previousTestimonial = testimonials[currentTestimonial];
+  previousTestimonial.classList.remove('active');
+
+  currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+
+  const nextTestimonial = testimonials[currentTestimonial];
+  nextTestimonial.classList.add('active');
+}
+
+// Display the first testimonial initially
+testimonials[currentTestimonial].classList.add('active');
+
+setInterval(showNextTestimonial, 10000); // Change testimonial every 10 seconds
+
+
+function scrollToSection(sectionId) {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    window.scrollTo({
+      top: section.offsetTop,
+      behavior: 'smooth'
+    });
+  }
+}
+
+
+  </Script>
+  </html>
+    
