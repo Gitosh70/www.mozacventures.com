@@ -416,7 +416,84 @@ html, body {
       display: block;
       margin: 0 auto;
     }
-  
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Add this CSS at the end of your existing styles */
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  /* Adjust header styles for mobile */
+  header {
+    padding: 5px;
+  }
+
+  /* Adjust nav styles for mobile */
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hamburger-icon {
+    display: block; /* Show the hamburger icon */
+  }
+
+  ul {
+    display: none; /* Hide the navigation links */
+  }
+
+  ul.active {
+    display: flex; /* Show the navigation links when active */
+  }
+
+  li {
+    margin-right: 0; /* Remove margin for list items */
+    margin-bottom: 10px; /* Add space between list items */
+  }
+
+  .dropdown-content {
+    position: static; /* Adjust dropdown position */
+  }
+
+  .section-links a {
+    display: block; /* Stack section links */
+    margin: 5px 0;
+  }
+
+  .rectangle h2 {
+    margin: 5px 0;
+  }
+
+  .container img {
+    width: 100%; /* Make images responsive */
+    height: auto;
+  }
+
+  .managers .slide {
+    display: flex;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+    
 </style>
 <script>
     // Add event listener to the "Contact Us" link
